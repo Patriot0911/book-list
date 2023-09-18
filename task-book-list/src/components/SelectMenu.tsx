@@ -1,4 +1,5 @@
 import { ISelectMenuProps } from "../types";
+import './SelectMenu.css';
 
 const selectParams = [
     'activated',
