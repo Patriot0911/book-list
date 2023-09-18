@@ -1,0 +1,31 @@
+{
+    "books" : [
+        {
+            "id": 1,
+            "title":        "White Fang",
+            "author":       "Jack London",
+            "cat":          "Roman",
+            "created":      "23.12.2023",
+            "edited":       "23.12.2023",
+            "activated":    true
+        },
+        {
+            "id": 2,
+            "title":        "ТЕСТ Fang",
+            "author":       "Jack London",
+            "cat":          "Roman",
+            "created":      "23.12.2023",
+            "edited":       "23.12.2023",
+            "activated":    true
+        },
+        {
+            "id": 3,
+            "title":        "ТЕСТ",
+            "author":       "Jack London",
+            "cat":          "Roman",
+            "created":      "23.12.2023",
+            "edited":       "23.12.2023",
+            "activated":    true
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+.dashboard-container {
+    margin: auto;
+    width: fit-content;
+    min-height: 53rem;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(93, 148, 138, 0.34);
+}
+input {
+    width: 25rem;
+    font-size: 2rem;
+}
+table {
+    overflow-x: hidden;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+td, th {
+    font-size: 2rem;
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+table {
+    border-bottom: 1px solid #dddddd;
+    width: 100rem;
+}
+th {
+    background-color: rgba(7, 6, 6, 0.282);
+    border: none;
+    border-bottom: 1px solid #dddddd;
+    height: 100px;
+}
+td {
+    padding: 15px;
+}
+@media (max-width: 1200px) {
+    td, th {
+        font-size: 1.2em;
+    }
+}

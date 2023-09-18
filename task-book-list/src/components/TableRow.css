@@ -1,0 +1,8 @@
+.action-buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.action-button {
+    padding: 10px;
+}
