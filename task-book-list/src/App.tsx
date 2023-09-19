@@ -25,16 +25,18 @@ const pagesList: IPagesList[] = [
 export default function App() {
   return (
     <Layout pagesList={pagesList}>
-      <Routes>
-        {
-          pagesList.map(item =>
-          <Route
-            key={item.name}
-            path={item.path}
-            element={item.element}
-          />)
-        }
-      </Routes>
+      <div className={'main'}>
+        <Routes>
+          {
+            pagesList.map(item =>
+            <Route
+              key={item.name}
+              path={item.path}
+              element={item.element}
+            />)
+          }
+        </Routes>
+      </div>
     </Layout>
   );
 };

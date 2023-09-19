@@ -23,6 +23,7 @@ export interface IBookInfo {
 
 export interface IBookTableProps {
   books: IBookInfo[];
+  setBooks: (books: IBookInfo[]) => void;
 };
 
 export interface ITableHeaderProps {
@@ -39,7 +40,12 @@ export interface IFooterProps {
 
 export interface IActionListProps {
   book: IBookInfo;
+  bookActivatedHandle: (book: IBookInfo) => void;
 };
+export interface ITableRowProps {
+  book: IBookInfo;
+  bookActivatedHandle: (book: IBookInfo) => void;
+}
 
 export interface IActionButtonProps {
   name: string;

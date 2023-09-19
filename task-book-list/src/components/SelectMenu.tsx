@@ -2,9 +2,9 @@ import { ISelectMenuProps } from "../types";
 import './SelectMenu.css';
 
 const selectParams = [
+    'all',
     'activated',
     'deactivated',
-    'all'
 ];
 
 export default function SelectMenu({ dispatch }: ISelectMenuProps) {

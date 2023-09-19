@@ -1,7 +1,7 @@
 .dashboard-container {
     margin: auto;
     width: fit-content;
-    min-height: 53rem;
+    min-height: 35rem;
     padding: 15px;
     border-radius: 5px;
     background-color: rgba(93, 148, 138, 0.34);
@@ -14,6 +14,7 @@ table {
     overflow-x: hidden;
     border-collapse: collapse;
     margin-top: 20px;
+    border-bottom: 1px solid #dddddd;
 }
 td, th {
     font-size: 2rem;
@@ -21,10 +22,6 @@ td, th {
     border-right: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
-}
-table {
-    border-bottom: 1px solid #dddddd;
-    width: 100rem;
 }
 th {
     background-color: rgba(7, 6, 6, 0.282);
@@ -35,8 +32,19 @@ th {
 td {
     padding: 15px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1010px) {
+    .dashboard-container {
+        width: 310px;
+        padding: 0;
+    }
+    input {
+        width: 10rem;
+        font-size: 1rem;
+    }
     td, th {
-        font-size: 1.2em;
+        font-size: 10px;
+        padding: 5px;
+        height: 0;
+        border-bottom: 1px solid #dddddd;
     }
 }

@@ -13,7 +13,7 @@ export default function Dashboard() {
     const [books, setBooks] = useState<null | IBookInfo[]>(null);
     const [state, dispatch] = useReducer(filterReducer, {
         search: '',
-        activated: 'activated'
+        activated: 'all'
     });
 
     useTitle(PAGETITLE);
@@ -28,7 +28,7 @@ export default function Dashboard() {
                 const fetchedBooks = (data as IBookInfo[]);
                 setBooks(fetchedBooks);
             });
-        }).catch(() => console.log(abortController.signal.aborted));
+        });
 
         return () => abortController.abort();
     }, [, state]);
@@ -51,6 +51,7 @@ export default function Dashboard() {
                 <h2>Loading...</h2> :
                 <BookTable
                     books={books}
+                    setBooks={setBooks}
                 />
             }
             {

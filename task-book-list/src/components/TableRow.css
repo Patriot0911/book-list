@@ -6,3 +6,18 @@
 .action-button {
     padding: 10px;
 }
+.mobile-actions {
+    display: none;
+    font-size: 7px;
+}
+
+@media (max-width: 1010px) {
+    .action-button {
+        display: none;
+    }
+}
+@media (max-width: 1010px) {
+    .mobile-actions {
+        display: block;
+    }
+}
