@@ -1,22 +1,13 @@
 {
   "books": [
     {
-      "id": 2,
-      "title": "ТЕСТ Fang",
-      "author": "Jack London",
-      "cat": "Roman",
-      "created": "23.12.2023",
-      "edited": "23.12.2023",
-      "activated": true
-    },
-    {
-      "id": 3,
-      "title": "ТЕСТ",
-      "author": "Jack London",
-      "cat": "Roman",
-      "created": "23.12.2023",
-      "edited": "23.12.2023",
-      "activated": true
+      "title": "Test Book",
+      "author": "Test Author",
+      "cat": "Test category",
+      "activated": false,
+      "created": "20.09.2023",
+      "edited": "never",
+      "id": 1
     }
   ]
 }

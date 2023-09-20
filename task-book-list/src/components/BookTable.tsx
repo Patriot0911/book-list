@@ -1,44 +1,71 @@
-import { changeActive } from "../scripts/fetchTools";
+import { createPortal } from "react-dom";
+import { deleteBook, putBook } from "../scripts/fetchTools";
 import { IBookInfo, IBookTableProps } from "../types";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
+import { useState } from "react";
+import ModalContent from "./ModalContent";
 
 export default function BookTable({ books, setBooks }: IBookTableProps) {
-    const changeBookActivatedHandle = async(book: IBookInfo) => {
-        if(await changeActive(book) === undefined){
+    const [showModal, setShowModal] = useState(false);
+    const deleteBookHandle = async (book: IBookInfo) => {
+        if(book.activated) {
+            setShowModal(true);
             return;
         }
-        const newBooks = books.map(item => ({
-            ...item,
-            activated: item.id === book.id ? !item.activated : item.activated
-        }));
-        setBooks(newBooks);
+        setBooks(books.filter(item => item.id !== book.id));
+        deleteBook(book);
     };
-
+    const changeBookActiveHandle = async (book: IBookInfo) => {
+        const newBook = {
+            ...book,
+            activated: !book.activated
+        };
+        if(await putBook(newBook) === undefined)
+            return;
+        setBooks(books.map(item => {
+            if(item.id !== book.id) {
+                return item;
+            }
+            return newBook;
+        }));
+    };
     return (
-        <table>
-            <tbody>
-                <TableHeader
-                    titles={
-                        [
-                            'ID', 'Title', 'Author',
-                            'Cat', 'Created at', 'Edited at',
-                            'Actions'
-                        ]
+        <>
+            {
+                showModal && createPortal(
+                    <ModalContent
+                        onClose={() => setShowModal(false)}
+                        info={'U have to deactivate Book first'}
+                    />,
+                    document.body
+                )
+            }
+            <table>
+                <tbody>
+                    <TableHeader
+                        titles={
+                            [
+                                'ID', 'Title', 'Author',
+                                'Cat', 'Created at', 'Edited at',
+                                'Actions'
+                            ]
+                        }
+                    />
+                    {
+                        books.length > 0 &&
+                        books.map(
+                            item =>
+                            <TableRow
+                                key={item.id}
+                                book={item}
+                                deleteBookHandle={deleteBookHandle}
+                                changeBookActiveHandle={changeBookActiveHandle}
+                            />
+                        )
                     }
-                />
-                {
-                    books.length > 0 &&
-                    books.map(
-                        item =>
-                        <TableRow
-                            key={item.id}
-                            book={item}
-                            bookActivatedHandle={changeBookActivatedHandle}
-                        />
-                    )
-                }
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </>
     );
 };

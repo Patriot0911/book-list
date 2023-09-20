@@ -1,0 +1,26 @@
+.book-form-container {
+    margin: auto;
+    width: fit-content;
+    background-color: rgba(93, 148, 138, 0.34);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.form-input {
+    font-size: 25px;
+    width: 15em;
+    padding: 5px;
+}
+.form-submit-button {
+    font-size: 20px;
+    padding: 10px;
+    width: 13rem;
+    margin-top: 3rem;
+}
+.book-form-container label {
+    font-size: 20px;
+}

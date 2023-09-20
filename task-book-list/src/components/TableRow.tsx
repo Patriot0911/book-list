@@ -1,12 +1,9 @@
-import {
-    IActionButtonProps,
-    IActionListProps,
-    ITableRowProps
-} from '../types';
+import { ITableRowProps } from '../types';
+import ActionsList from './ActionsList';
 import './TableRow.css';
 
 export default function TableRow(props: ITableRowProps) {
-    const { book } = props;
+    const { book } = props;    
     return (
         <tr className={'table-content'}>
             <td>{book.id}</td>
@@ -21,38 +18,5 @@ export default function TableRow(props: ITableRowProps) {
                 />
             </td>
         </tr>
-    );
-};
-function ActionsList({ book, bookActivatedHandle }: IActionListProps) {
-    return (
-        <div className={'action-buttons-container'}>
-            <ActionButton
-                name={'Edit'}
-            />
-            <ActionButton
-                name={'Delete'}
-            />
-            <ActionButton
-                name={
-                    book.activated ? 'DeActivate' : 'ReActivate'
-                }
-                color={
-                    book.activated ? 'green' : 'red'
-                }
-                callback={() => bookActivatedHandle(book)}
-            />
-            <button className={'mobile-actions'}>Action</button>
-        </div>
-    );
-};
-function ActionButton (props: IActionButtonProps) {
-    return (
-        <button
-            onClick={props.callback && props.callback}
-            style={props.color ? {backgroundColor: `${props.color}`} : {}}
-            className={'action-button'}
-        >
-            {props.name}
-        </button>
     );
 };

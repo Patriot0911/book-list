@@ -5,11 +5,21 @@
 }
 .action-button {
     padding: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color: aliceblue;
+    background-color: rgba(73, 97, 117, 0.733);
+    transition: all 0.3s ease-in-out;
+    border: none;
+}
+.action-button:hover {
+    background-color: rgba(100, 131, 156, 0.973);
 }
 .mobile-actions {
     display: none;
     font-size: 7px;
 }
+
 
 @media (max-width: 1010px) {
     .action-button {
