@@ -3,10 +3,10 @@
     {
       "title": "Test Book",
       "author": "Test Author",
-      "cat": "Test category",
-      "activated": false,
+      "cat": "Test Cat",
+      "activated": true,
       "created": "20.09.2023",
-      "edited": "never",
+      "edited": "20.09.2023",
       "id": 1
     }
   ]

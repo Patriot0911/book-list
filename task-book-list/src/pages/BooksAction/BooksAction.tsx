@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { fetchBook } from '../../scripts/fetchTools';
 import { IBookInfo } from '../../types';
 import NewBookForm from '../../components/NewBookForm';
-import './BooksAction.css';
+import EditBookForm from '../../components/EditBookForm';
 
 const PAGETITLE = 'Books Managing';
 
@@ -16,6 +16,8 @@ export default function BooksAction() {
     useTitle(PAGETITLE);
 
     useEffect(() => {
+        setBook(null);
+        console.log(searchParams);
         const bookId = searchParams.get('bookid');
         if(!bookId) {
             setLoading(false);
@@ -31,7 +33,7 @@ export default function BooksAction() {
             setLoading(false);
         };
         fetchBookInfo();
-    }, []);
+    }, [, searchParams]);
 
     return (
         <>
@@ -39,18 +41,12 @@ export default function BooksAction() {
                 loading ? <h1>Loading...</h1> :
                 (
                     book ?
-                    <EditBook /> :
+                    <EditBookForm
+                        book={book}
+                    /> :
                     <NewBookForm />
                 )
             }
-        </>
-    );
-};
-
-function EditBook(){
-    return (
-        <>
-            EditBook!
         </>
     );
 };

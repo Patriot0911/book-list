@@ -1,5 +1,5 @@
-import { ForwardedRef, forwardRef } from "react";
-import { IFormInputProps } from "../types";
+import { ForwardedRef, forwardRef } from 'react';
+import { IFormInputProps } from '../types';
 
 const FormInput = (props: IFormInputProps, refer: ForwardedRef<HTMLInputElement>) => {
     return (
@@ -11,6 +11,7 @@ const FormInput = (props: IFormInputProps, refer: ForwardedRef<HTMLInputElement>
                 ref={refer}
                 minLength={3}
                 maxLength={20}
+                defaultValue={props.value ? props.value : ''}
                 required
             />
         </label>

@@ -10,8 +10,13 @@
     align-items: center;
 }
 .modal-window {
+    display: flex;
+    flex-direction: column;
     background-color: rgba(16, 36, 56, 0.856);
     margin: auto;
     padding: 15px;
     border-radius: 15px;
+}
+.modal-window button {
+    margin-top: 5px;
 }

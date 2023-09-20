@@ -1,13 +1,27 @@
 import { useRef } from 'react';
 import { postBook } from '../scripts/fetchTools';
-import { INewBookInfo } from '../types';
-import FormInput from './FormInput';
-import './NewBookForm.css';
+import { IFormsItems, INewBookInfo } from '../types';
+import GeneralForm from './GeneralForm';
 
 export default function NewBookForm() {
     const titleRef = useRef<HTMLInputElement>(null);
     const authorRef = useRef<HTMLInputElement>(null);
     const categoryRef = useRef<HTMLInputElement>(null);
+
+    const itemsList: IFormsItems[] = [
+        {
+            name: 'Title',
+            refer: titleRef
+        },
+        {
+            name: 'Author',
+            refer: authorRef
+        },
+        {
+            name: 'Category',
+            refer: categoryRef
+        }
+    ];
 
     const submitHandle = () => {
         const newBook: INewBookInfo = {
@@ -19,29 +33,10 @@ export default function NewBookForm() {
     };
 
     return (
-        <form
-            className={'book-form-container'}
-            onSubmit={submitHandle}
-        >
-            <h1>New Book Form</h1>
-            <FormInput
-                name={'Title'}
-                ref={titleRef}
-            />
-            <FormInput
-                name={'Author'}
-                ref={authorRef}
-            />
-            <FormInput
-                name={'Category'}
-                ref={categoryRef}
-            />
-            <button
-                type={'submit'}
-                className={'form-submit-button'}
-            >
-                Submit
-            </button>
-        </form>
+        <GeneralForm
+            title={'New Book'}
+            inputItems={itemsList}
+            submitHandle={submitHandle}
+        />
     );
 };

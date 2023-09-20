@@ -1,4 +1,4 @@
-.book-form-container {
+.general-form-container {
     margin: auto;
     width: fit-content;
     background-color: rgba(93, 148, 138, 0.34);
@@ -23,4 +23,10 @@
 }
 .book-form-container label {
     font-size: 20px;
+}
+
+@media (max-width: 1010px) {
+    .form-input {
+        font-size: 15px;
+    }
 }

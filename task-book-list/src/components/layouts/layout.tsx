@@ -1,7 +1,7 @@
-import { BrowserRouter } from "react-router-dom";
-import { ILayoutProps, TLinks } from "../../types";
-import Footer from "./Footer/Footer";
-import NavBar from "./NavBar/NavBar";
+import { BrowserRouter } from 'react-router-dom';
+import { ILayoutProps, TLinks } from '../../types';
+import Footer from './Footer/Footer';
+import NavBar from './NavBar/NavBar';
 
 const footerLinks: TLinks[] = [
     {

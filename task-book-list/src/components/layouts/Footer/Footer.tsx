@@ -1,5 +1,5 @@
 import './Footer.css'
-import { IFooterProps } from "../../../types";
+import { IFooterProps } from '../../../types';
 
 export default function Footer({ links }: IFooterProps) {
     return (

@@ -1,10 +1,10 @@
-import { createPortal } from "react-dom";
-import { deleteBook, putBook } from "../scripts/fetchTools";
-import { IBookInfo, IBookTableProps } from "../types";
-import TableHeader from "./TableHeader";
-import TableRow from "./TableRow";
-import { useState } from "react";
-import ModalContent from "./ModalContent";
+import { createPortal } from 'react-dom';
+import { deleteBook, putBook } from '../scripts/fetchTools';
+import { IBookInfo, IBookTableProps } from '../types';
+import TableHeader from './TableHeader';
+import TableRow from './TableRow';
+import { useState } from 'react';
+import ModalContent from './ModalContent';
 
 export default function BookTable({ books, setBooks }: IBookTableProps) {
     const [showModal, setShowModal] = useState(false);
@@ -36,7 +36,7 @@ export default function BookTable({ books, setBooks }: IBookTableProps) {
                 showModal && createPortal(
                     <ModalContent
                         onClose={() => setShowModal(false)}
-                        info={'U have to deactivate Book first'}
+                        info={'You have to deactivate Book first'}
                     />,
                     document.body
                 )

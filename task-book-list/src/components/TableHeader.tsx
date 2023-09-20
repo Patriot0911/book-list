@@ -1,4 +1,4 @@
-import { ITableHeaderProps } from "../types";
+import { ITableHeaderProps } from '../types';
 
 export default function TableHeader({ titles }: ITableHeaderProps) {
     return (

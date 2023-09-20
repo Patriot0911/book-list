@@ -1,4 +1,4 @@
-import { IState } from "./filterReducer";
+import { IState } from './filterReducer';
 
 const BASEURL = 'http://localhost:3000';
 

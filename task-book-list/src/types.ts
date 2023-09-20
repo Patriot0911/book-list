@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ForwardedRef, ReactElement } from 'react';
 import { IActions } from './scripts/filterReducer';
 
 export interface IPagesList {
@@ -23,6 +23,11 @@ export interface INewBookInfo {
 export type TLinks = {
   name:           string;
   link:           string;
+};
+export interface IFormsItems {
+  name: string;
+  value?: string;
+  refer: ForwardedRef<HTMLInputElement>;
 };
 
 export interface INavBarProps {
@@ -53,6 +58,7 @@ export interface IActionButtonProps {
   callback?: () => void;
   color?: string;
   path?: string;
+  mobile?: boolean;
 };
 export interface ILayoutProps {
   pagesList: IPagesList[];
@@ -67,8 +73,24 @@ export interface INewBookProps {
 };
 export interface IFormInputProps {
   name: string;
+  value?: string;
 };
 export interface IModalContentProps {
   onClose: () => void;
   info: string;
+  children?: React.ReactNode;
+};
+export interface IEditBookFormProps {
+  book: IBookInfo;
+};
+export interface IMainActionButtonsProps {
+  book: IBookInfo;
+  deleteBookHandle: (book: IBookInfo) => void;
+  changeBookActiveHandle: (book: IBookInfo) => void;
+  mobile: boolean;
+};
+export interface IGeneralFormProps {
+  title: string;
+  inputItems: IFormsItems[];
+  submitHandle: () => void;
 };

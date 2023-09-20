@@ -1,4 +1,4 @@
-import { IBookInfo, INewBookInfo } from "../types";
+import { IBookInfo, INewBookInfo } from '../types';
 
 const BASEURL = 'http://localhost:3000';
 
@@ -32,7 +32,7 @@ export const postBook = async (book: INewBookInfo) => {
         ...book,
         activated: false,
         created: new Date().toLocaleDateString(),
-        edited: 'never'
+        edited: '--'
     };
     const requestOptions = {
         method: 'POST',

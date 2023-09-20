@@ -1,5 +1,4 @@
-import { ISelectMenuProps } from "../types";
-import './SelectMenu.css';
+import { ISelectMenuProps } from '../types';
 
 const selectParams = [
     'all',

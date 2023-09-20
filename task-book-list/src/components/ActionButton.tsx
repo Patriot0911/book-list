@@ -13,7 +13,11 @@ export default function ActionButton (props: IActionButtonProps) {
                     backgroundColor: `${props.color}`
                 } : {}
             }
-            className={'action-button'}
+            className={
+                props.mobile ?
+                'action-button' :
+                'action-button big-screen'
+            }
             to={
                 props.path ? props.path : '/'
             }

@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { INavBarProps } from "../../../types";
+import { Link } from 'react-router-dom';
+import { INavBarProps } from '../../../types';
 import './Navbar.css';
 
 export default function NavBar({ pages }: INavBarProps) {

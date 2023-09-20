@@ -20,9 +20,8 @@
     font-size: 7px;
 }
 
-
 @media (max-width: 1010px) {
-    .action-button {
+    .big-screen {
         display: none;
     }
 }

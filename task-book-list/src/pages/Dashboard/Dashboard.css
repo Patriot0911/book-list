@@ -6,7 +6,11 @@
     border-radius: 5px;
     background-color: rgba(93, 148, 138, 0.34);
 }
-input {
+.dashboard-container h1 {
+    margin: auto;
+    text-align: center;
+}
+input, select {
     width: 25rem;
     font-size: 2rem;
 }
@@ -15,13 +19,13 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
     border-bottom: 1px solid #dddddd;
+    margin: auto;
 }
 td, th {
-    font-size: 2rem;
+    font-size: 1rem;
     border-left: 1px solid #dddddd;
     border-right: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
 }
 th {
     background-color: rgba(7, 6, 6, 0.282);
@@ -30,21 +34,31 @@ th {
     height: 100px;
 }
 td {
+    position: relative;
     padding: 15px;
+    max-width: 225px;
+    overflow: scroll;
 }
+td::-webkit-scrollbar {
+    display: none;
+}  
 @media (max-width: 1010px) {
     .dashboard-container {
         width: 310px;
         padding: 0;
     }
-    input {
+    input, select {
         width: 10rem;
-        font-size: 1rem;
+        font-size: 10px;
+        margin-left: 8px;
     }
     td, th {
-        font-size: 10px;
+        font-size: 8px;
         padding: 5px;
         height: 0;
         border-bottom: 1px solid #dddddd;
     }
+    td {
+        max-width: 35px;
+    }  
 }
